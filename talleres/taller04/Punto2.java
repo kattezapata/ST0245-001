@@ -11,8 +11,8 @@ public class Punto2
 {
 
     public static void main(String args[]){
+        long tiempoInicial=System.currentTimeMillis();
         for(int n=13;n<33;n++){
-            long tiempoInicial=System.currentTimeMillis();
             sumaVol(new int [n],10);
             long tiempoFinal=System.currentTimeMillis();
             System.out.println(tiempoFinal-tiempoInicial);

@@ -7,13 +7,11 @@
  * @version 1
  */
 
-
 public class Punto3
 {
     public static void main(String []args){
-
+        long tiempoInicial=System.currentTimeMillis();
         for(int n=22;n<42;n++){
-            long tiempoInicial=System.currentTimeMillis();
             fibonacci(n);
             long tiempoFinal=System.currentTimeMillis();
             System.out.println(tiempoFinal-tiempoInicial);

@@ -1,5 +1,5 @@
 import java.lang.Math;
- /**
+/**
  * La clase Punto1 permite calcular el máximo de los elementos de un
  * arreglo de forma recursiva. 
  * La complejidad asintótica para el peor de los casos en que se ejecute
@@ -10,18 +10,13 @@ import java.lang.Math;
 
 public class Punto1
 {
+
     /**
      * 
      */
     public static void main(String args[]){
-        for(int n=9960;n<9980;n++){
-            /*
-            int [] arr=new int [n];
-            for(int j=0;j<n;j++){
-            arr[j]=j;
-            }
-             */
-            long tiempoInicial=System.currentTimeMillis();
+        long tiempoInicial=System.currentTimeMillis();
+        for(int n=9000;n<9020;n++){
             max(new int [n]);
             long tiempoFinal=System.currentTimeMillis();
             System.out.println(tiempoFinal-tiempoInicial);
