@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class CÃ³digoEjercicio2 here.
+ * CodigoEjercicio2
  * 
  * @author Laura Katterine Zapata Rendón, Maria Alejandra Velez Clavijo
  * @version 1
