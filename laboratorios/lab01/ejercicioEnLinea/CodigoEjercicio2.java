@@ -52,5 +52,22 @@ public class CodigoEjercicio2
         }
         return num;
     }
+    
+public int bunnyEars(int bunnies) {
+  //Caso base
+  if(bunnies==0) return 0;
+  //Llamado recursivo
+  else return 2+bunnyEars(bunnies-1);
+}
+
+public int factorial(int n) {
+  if (n==1) return n;
+  else return n*factorial(n-1);
+}
+
+public int fibonacci(int n) {
+  if(n<=1) return n;
+  else return fibonacci(n-1)+fibonacci(n-2);
+}
 
 }
