@@ -25,15 +25,22 @@ public class CodigoEjercicio1
     } 
     private int countHi(String str, int a){
         if(str.length()==0){
-            return a;
+            return a; 
     } else{
         if(str.endsWith("hi")){
             a++;
             return countHi(str.substring(0, str.length()-2),a);
         }
         return countHi(str.substring(0, str.length()-1),a);
-      }
-  
+        // complejidad para el peor de los casos:
+        // t(n)= c1 + t(n-1), donde c1= 5
+        // t(n)= c3*n + c1
+        // t(n)= c3*n (regla de la suma)
+        // t(n)= n (regla del producto)
+        // complejidad: O(n) lineal
+      } 
+   
+   
     }
     
     public int bunnyEars2(int bunnies) {
@@ -46,6 +53,11 @@ public class CodigoEjercicio1
         } 
         if(bunnies%2!=0){
             return num = 2 + bunnyEars2(bunnies-1);
+            // t(n)= c1+t(n-1), donde c1= 6
+            // t(n)= c3*n + c1
+            // t(n)= c3*n (regla de la suma)
+            // t(n)= n (regla del producto)
+            // complejidad: O(n) lineal
         }     
         return num;
     }
@@ -61,6 +73,11 @@ public class CodigoEjercicio1
         } 
         else{
             num= rows+triangle(rows-1);
+            // t(n)= c1+t(n-1), donde c1= 4
+            // t(n)= c3*n + c1
+            // t(n)= c3*n (regla de la suma)
+            // t(n)= n (regla del producto)
+            // complejidad: O(n) lineal
         }
         return num;
     }
@@ -75,6 +92,13 @@ public class CodigoEjercicio1
                 return groupSum6(start+1, nums, target-6);
             }
         return groupSum6(start+1, nums, target-nums[start]) || groupSum6(start+1, nums, target);
+            // t(n)= c1+t(n-1)+ t(n-1), donde c1= 7
+            // t(n) = c_1*(2^n - 1) + c_1*2^(n - 1) 
+            // t(n)= (2^n - 1) + 2^(n - 1) (regla del producto)
+            // t(n)= 2^n+ 2^n (regla de la suma)
+            // t(n)= 2*(2^n)
+            // t(n)= 2^n (regla del producto)
+            // complejidad: O(2^n) exponencial
         }
     }
     
@@ -84,7 +108,9 @@ public class CodigoEjercicio1
         }
         else{
             return groupNoAdj(start+2, nums, target-nums[start]) || groupNoAdj(start+1, nums, target);
-    
+            // t(n)= c1+ t(n-2)+t(n-1), donde c1= 7
+            // t(n)= 2^n
+            // complejidad: O(2^n) exponencial
         }
     }
     
@@ -104,6 +130,14 @@ public class CodigoEjercicio1
             } 
             else{
                 return split53(start+1, nums, sum5+nums[start], sum3) || split53(start+1, nums, sum5, sum3+nums[start]);
+                // t(n)= c1+ t(n-1)+t(n-1) donde c1= 9
+                // t(n) = c_1*(2^n - 1) + c_1*2^(n - 1) 
+                // t(n)= (2^n - 1) + 2^(n - 1) (regla del producto)
+                // t(n)= 2^n+ 2^n (regla de la suma)
+                // t(n)= 2*(2^n)
+                // t(n)= 2^n (regla del producto)
+                // complejidad: O(2^n) exponencial
+                
             }
       
            }
