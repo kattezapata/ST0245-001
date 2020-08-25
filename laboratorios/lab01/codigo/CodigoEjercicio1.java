@@ -53,15 +53,16 @@ public class CodigoEjercicio1
      * @return longitud de la subsecuencia mas larga en comun
      */
     private static int subsecuencia(String cadena1, String cadena2, int m, int n) {
-        if(m-1<0 || n-1<0){
-            return 0;
+        if((m-1)<0 || (n-1)<0){
+            return 0; // T(n) = c1, donde c1 = 7
         }
         
         if(cadena1.charAt(m-1)==cadena2.charAt(n-1)){
-            return 1 + subsecuencia(cadena1,cadena2, m-1, n-1);
+            return 1 + subsecuencia(cadena1,cadena2, m-1, n-1); // T(n) = c2 + T(n-1) + T(n-1), donde c2 = 10
         }
         
         return Math.max(subsecuencia(cadena1, cadena2,m-1, n), subsecuencia(cadena1, cadena2, m, n-1));
+        //T(n) = c3 + T(n-1) + T(n-1), donde c3 = 4
     }
   
 
