@@ -39,7 +39,7 @@ public class CodigoEjercicio1
      */
     
     public static int subsecuencia(String cadena1, String cadena2){
-        return subsecuencia(cadena1,cadena2,cadena1.length(),cadena2.length());
+        return subsecuencia(cadena1,cadena2,cadena1.length()-1,cadena2.length()-1);
     }
 
     /**
@@ -84,6 +84,6 @@ public class CodigoEjercicio1
         // donde p es:  p = m + n, donde m es la longitud de la cadena 1 y n es la longitud de la cadena 2
           
   
-
+    }
 }
     
