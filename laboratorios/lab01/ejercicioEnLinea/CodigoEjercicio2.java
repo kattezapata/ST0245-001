@@ -195,4 +195,41 @@ public int fibonacci(int n) {
   else return fibonacci(n-1)+fibonacci(n-2);
 }
 
+ //Ejercicio splitArray recursión 2 
+public boolean splitArray(int[] nums) {
+  return  splitArray(0,0,0,nums); 
+}
+
+
+public boolean splitArray(int start, int suma1,int suma2, int[] nums) {
+  if(start>=nums.length) return suma1==suma2;
+  else return  splitArray(start+1, suma1+nums[start], suma2, nums) ||  splitArray(start+1, suma1, suma2+nums[start], nums);
+}
+
+ //Ejercicio splitOdd10 recursión 2 
+public boolean splitOdd10(int[] nums) {
+  return  splitOdd10(0,0,0,nums); 
+}
+
+
+public boolean splitOdd10(int start, int suma1,int suma2, int[] nums) {
+  if(start>=nums.length) return (suma1 % 10 == 0 && suma2 % 2 != 0)||(suma2 % 10 == 0 && suma1 % 2 != 0);
+  else return  splitOdd10(start+1, suma1+nums[start], suma2, nums) ||  splitOdd10(start+1, suma1, suma2+nums[start], nums);
+}
+
+
+ //Ejercicio groupSum5 recursión 2 
+public boolean groupSum5(int start, int[] nums, int target) {
+  if(start>=nums.length) return target==0;
+  
+ 
+  else if(nums[start]%5==0)
+    return groupSum5(start+1,nums,target-nums[start]);
+    
+  else if(start>1 && nums[start]==1 &&  nums[start-1]%5==0)
+    return groupSum5(start+1,nums,target);
+    
+else return groupSum5(start+1,nums,target-nums[start])|| groupSum5(start+1,nums,target); 
+}
+
 }
