@@ -190,7 +190,8 @@ public class CodigoEjercicio2
     //Llamado recursivo
     else return 2+bunnyEars(bunnies-1);//T(n)= c2+ T(n-1), donde c2=3
     // T(n)= c2 n + c1 
-    // T(n)= n (lineal)
+    // T(n)= n 
+    //complejidad: O(n) lineal
     }
 
     /**
@@ -203,7 +204,8 @@ public class CodigoEjercicio2
     if (n==1) return n;// T(n)= c1, donde c1=3
     else return n*factorial(n-1);//T(n)=c2+ T(n-1), donde c2=3
     // T(n)= c2 n + c1 
-    // T(n)= n (lineal)
+    // T(n)= n 
+    //complejidad: O(n) lineal
     }
 
     /**
@@ -215,7 +217,8 @@ public class CodigoEjercicio2
     public int fibonacci(int n) {
     if(n<=1) return n;//T(n)=c1, donde c1=3
     else return fibonacci(n-1)+fibonacci(n-2); // T(n) = c2+ T(n-1)+ T(n-2), donde c2=4
-    // T(n)= 2^n (Exponencial)
+    // T(n)= 2^n 
+    //complejidad: O(2^n) exponencial
     
     }
 
@@ -245,7 +248,8 @@ public class CodigoEjercicio2
     else return  splitArray(start+1, suma1+nums[start], suma2, nums) ||  splitArray(start+1, suma1, suma2+nums[start], nums);
     //T(n)= c2+ T(n-1)+ T(n-1), donde c2=8
     //T(n)=c2((2^n) -1)+ c1 2^(n-1)
-    //T(n)= 2^n (Exponencial)
+    //T(n)= 2^n 
+    //complejidad: O(2^n) exponencial
     }
 
     /**
@@ -280,7 +284,8 @@ public class CodigoEjercicio2
     else return  splitOdd10(start+1, suma1+nums[start], suma2, nums) ||  splitOdd10(start+1, suma1, suma2+nums[start], nums);
     //T(n)= c2+ T(n-1)+ T(n-1), donde c2=8
     //T(n)=c2((2^n) -1)+ c1 2^(n-1)
-    //T(n)= 2^n (Exponencial)
+    //T(n)= 2^n 
+    //complejidad: O(2^n) exponencial
     }
 
     /**
@@ -313,7 +318,8 @@ public class CodigoEjercicio2
     else return groupSum5(start+1,nums,target-nums[start])|| groupSum5(start+1,nums,target); 
     //T(n)= c4+ T(n-1)+ T(n-1), donde c4=8
     //T(n)=c4((2^n) -1)+ c1 2^(n-1)
-    //T(n)= 2^n (Exponencial)
+    //T(n)= 2^n 
+    //complejidad: O(2^n) exponencial
     }
 
     }
