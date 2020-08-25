@@ -58,11 +58,16 @@ public class CodigoEjercicio1
         }
         
         if(cadena1.charAt(m-1)==cadena2.charAt(n-1)){
-            return 1 + subsecuencia(cadena1,cadena2, m-1, n-1); // T(n) = c2 + T(n-1) + T(n-1), donde c2 = 10
+            return 1 + subsecuencia(cadena1,cadena2, m-1, n-1); 
+        // T(n) = c2 + T(n-1) + T(n-1), donde c2 = 10
+        // T(n) = c2((2^n)-1) + c1 * 2^(n-1)
+        // T(n) = 2^n (exponencial)
         }
         
         return Math.max(subsecuencia(cadena1, cadena2,m-1, n), subsecuencia(cadena1, cadena2, m, n-1));
         //T(n) = c3 + T(n-1) + T(n-1), donde c3 = 4
+        // T(n) = c3((2^n)-1) + c3 * 2^(n-1)
+        // T(n) = 2^n (exponencial)
     }
   
 
