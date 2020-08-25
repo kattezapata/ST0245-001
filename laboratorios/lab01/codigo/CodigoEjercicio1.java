@@ -53,25 +53,36 @@ public class CodigoEjercicio1
      * @return longitud de la subsecuencia mas larga en comun
      */
     private static int subsecuencia(String cadena1, String cadena2, int m, int n) {
+        
         if(m==0 || n==0){
           
-            return 0; // T(n) = c1, donde c1 = 5
+            return 0; // T(p) = c1, donde c1 = 5
         }
         
         if(cadena1.charAt(m)==cadena2.charAt(n)){
            
             return 1 + subsecuencia(cadena1,cadena2, m-1, n-1); 
-        // T(n) = c2 + T(n-1) + T(n-1), donde c2 = 10
-        // T(n) = c2((2^n)-1) + c1 * 2^(n-1)
-        // T(n) = 2^n (exponencial)
+        // T(p) = c2 + T(p-2), donde c2 = 10
+        // T(p) = c2((2^p)-1) + c1 * 2^(p-1)
+        // T(p) = c * 2^p + c
+        // T(p) = O(c * 2^p + c)
+        // O(c * 2^p + c) = O(2 * 2^p)
+        // O(2 * 2^p) = O(2^p)
+        // La complejidad es O(2^p) es decir exponencial,
+        // donde p es:  p = m + n, donde m es la longitud de la cadena 1 y n es la longitud de la cadena 2
           
         }
         
         return Math.max(subsecuencia(cadena1, cadena2,m-1, n), subsecuencia(cadena1, cadena2, m, n-1));
-        //T(n) = c3 + T(n-1) + T(n-1), donde c3 = 4
-        // T(n) = c3((2^n)-1) + c3 * 2^(n-1)
-        // T(n) = 2^n (exponencial)
-    }
+        // T(p) = c3 + T(p-1) + T(p-1), donde c3 = 10
+        // T(p) = c3((2^p)-1) + c1 * 2^(p-1)
+        // T(p) = (c3 + (c1/2)) *(2^p) - c3 
+        // T(p) = O((c3 + (c1/2)) *(2^p) - c3)
+        // O((c3 + (c1/2)) *(2^p) - c3 ) = O((c3 + (c1/2)) *(2^p))
+        // O((c3 + (c1/2)) *(2^p)) = O((2^p))
+        // T(n) es O(2^p) es decir que la complejidad es exponencial,
+        // donde p es:  p = m + n, donde m es la longitud de la cadena 1 y n es la longitud de la cadena 2
+          
   
 
 }
