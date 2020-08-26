@@ -3,10 +3,11 @@
  * La clase CodigoEjercicio2 tiene diversos métodos que pretenden darle solución a 
  * problemas planteados en el laboratorio 1 del curso estructuras de datos y algoritmos 
  * @author Laura Katterine Zapata Rendón, Maria Alejandra Velez Clavijo
- * @version 1
+ * @version 2
  */
 public class CodigoEjercicio2
 {
+    //**************************** Recursion 1 ********************************
     /**
      * El método countHi: dada una cadena, calcula de forma recursiva el número de veces que aparece "hi" minúscula en la cadena, 
      * haciendo un llamado al método countHi, que es el encargado de analizar la cadena y al cual se le pasa una cadena 
@@ -52,7 +53,7 @@ public class CodigoEjercicio2
             return num=0;
         }
         if(bunnies%2==0){
-            return num= 3 + bunnyEars2(bunnies-1);
+            return num = 3 + bunnyEars2(bunnies-1);
         } 
         if(bunnies%2!=0){
             return num = 2 + bunnyEars2(bunnies-1);
@@ -64,6 +65,8 @@ public class CodigoEjercicio2
         }     
         return num;
     }
+    
+    
     /**
      * Se tiene un triángulo hecho de bloques. La fila superior tiene 1 bloque,
      * la siguiente fila hacia abajo tiene 2 bloques, la siguiente fila tiene 3 bloques,
@@ -72,7 +75,6 @@ public class CodigoEjercicio2
      * @param rows número de filas
      * @return número de bloques en el número de filas dado
      */
-    
     public int triangle(int rows) {
         int num=0;
         if(rows==0){
@@ -91,6 +93,57 @@ public class CodigoEjercicio2
         }
         return num;
     }
+    
+    
+    /**
+     * El método bunnyEars calcula el número total de orejas de todos los conejos de forma recursiva
+     * sabiendo que cada conejo tiene 2 orejas.
+     * 
+     * @param bunnies numero de conejos
+     * @return número de orejas que tienen en total los conejos
+     */
+    public int bunnyEars(int bunnies) {
+    //Caso base
+    if(bunnies==0) return 0; //T(n)=c1, donde c1=3
+    //Llamado recursivo
+    else return 2+bunnyEars(bunnies-1);//T(n)= c2+ T(n-1), donde c2=3
+    // T(n)= c2 n + c1 
+    // T(n)= n 
+    //complejidad: O(n) lineal
+    }
+
+    
+    /**
+     * El método factorial calcula de forma recursiva el factorial de n, que es n * (n-1) * (n-2) ... 1.
+     * 
+     * @param n numero a calcular el factorial
+     * @return factorial de n
+     */
+    public int factorial(int n) {
+    if (n==1) return n;// T(n)= c1, donde c1=3
+    else return n*factorial(n-1);//T(n)=c2+ T(n-1), donde c2=3
+    // T(n)= c2 n + c1 
+    // T(n)= n 
+    //complejidad: O(n) lineal
+    }
+
+    
+    /**
+     * El método fibonacci calcula de forma recursiva el nesimo numero en la serie fibonacci
+     * 
+     * @param n numero en la serie fibonacci
+     * @return nesimo numero fibonacci
+     */
+    public int fibonacci(int n) {
+    if(n<=1) return n;//T(n)=c1, donde c1=3
+    else return fibonacci(n-1)+fibonacci(n-2); // T(n) = c2+ T(n-1)+ T(n-2), donde c2=4
+    // T(n)= 2^n 
+    //complejidad: O(2^n) exponencial
+    
+    }
+    
+    //**************************** Recursion 2 ********************************
+    
     
     /**
      * Dada una matriz de ints, el método groupSum6 devuelve si es posible elegir un grupo de algunos de los ints,
@@ -177,50 +230,7 @@ public class CodigoEjercicio2
       
            }
 }
-    /**
-     * El método bunnyEars calcula el número total de orejas de todos los conejos de forma recursiva
-     * sabiendo que cada conejo tiene 2 orejas.
-     * 
-     * @param bunnies numero de conejos
-     * @return número de orejas que tienen en total los conejos
-     */
-    public int bunnyEars(int bunnies) {
-    //Caso base
-    if(bunnies==0) return 0; //T(n)=c1, donde c1=3
-    //Llamado recursivo
-    else return 2+bunnyEars(bunnies-1);//T(n)= c2+ T(n-1), donde c2=3
-    // T(n)= c2 n + c1 
-    // T(n)= n 
-    //complejidad: O(n) lineal
-    }
-
-    /**
-     * El método factorial calcula de forma recursiva el factorial de n, que es n * (n-1) * (n-2) ... 1.
-     * 
-     * @param n numero a calcular el factorial
-     * @return factorial de n
-     */
-    public int factorial(int n) {
-    if (n==1) return n;// T(n)= c1, donde c1=3
-    else return n*factorial(n-1);//T(n)=c2+ T(n-1), donde c2=3
-    // T(n)= c2 n + c1 
-    // T(n)= n 
-    //complejidad: O(n) lineal
-    }
-
-    /**
-     * El método fibonacci calcula de forma recursiva el nesimo numero en la serie fibonacci
-     * 
-     * @param n numero en la serie fibonacci
-     * @return nesimo numero fibonacci
-     */
-    public int fibonacci(int n) {
-    if(n<=1) return n;//T(n)=c1, donde c1=3
-    else return fibonacci(n-1)+fibonacci(n-2); // T(n) = c2+ T(n-1)+ T(n-2), donde c2=4
-    // T(n)= 2^n 
-    //complejidad: O(2^n) exponencial
     
-    }
 
     /**
      * El método splitArray dado un array de ints, calcula si es posible dividir los elementos del array en dos grupos, 
@@ -252,12 +262,13 @@ public class CodigoEjercicio2
     //complejidad: O(2^n) exponencial
     }
 
+    
     /**
      * El método splitOdd10 dado un array de ints, calcula si es posible dividir los elementos del array en dos grupos, 
      * de modo que la suma de un grupo sea un múltiplo de 10, y la suma del otro grupo sea impar. 
      * Cada elemento debe estar en un grupo o en el otro. 
      * 
-     *  @param nums arreglo de enteros a analizar
+     * @param nums arreglo de enteros a analizar
      * @return posibilidad de dividir los elementos en 2 grupos con las condiciones anteriores
      */
     public boolean splitOdd10(int[] nums) {
@@ -277,17 +288,20 @@ public class CodigoEjercicio2
      * @return posibilidad de dividir los elementos en 2 grupos con las condiciones anteriores
      */
     public boolean splitOdd10(int start, int suma1,int suma2, int[] nums) {
-    if(start>=nums.length) return (suma1 % 10 == 0 && suma2 % 2 != 0)||(suma2 % 10 == 0 && suma1 % 2 != 0);
-    //T(n)= c1, donde c1=14
+    
+        if(start>=nums.length) return (suma1 % 10 == 0 && suma2 % 2 != 0)||(suma2 % 10 == 0 && suma1 % 2 != 0);
+        //T(n)= c1, donde c1=14
 
     
-    else return  splitOdd10(start+1, suma1+nums[start], suma2, nums) ||  splitOdd10(start+1, suma1, suma2+nums[start], nums);
-    //T(n)= c2+ T(n-1)+ T(n-1), donde c2=8
-    //T(n)=c2((2^n) -1)+ c1 2^(n-1)
-    //T(n)= 2^n 
-    //complejidad: O(2^n) exponencial
+        else return  splitOdd10(start+1, suma1+nums[start], suma2, nums) ||  splitOdd10(start+1, suma1, suma2+nums[start], nums);
+        //T(n)= c2+ T(n-1)+ T(n-1), donde c2=8
+        //T(n)=c2((2^n) -1)+ c1 2^(n-1)
+        //T(n)= 2^n 
+        //complejidad: O(2^n) exponencial
     }
 
+    
+    
     /**
      *  * El método groupSum5 dado un array de ints, calcula si es posible elegir un grupo de elementos del array, 
      * de manera que el grupo sume el numero objetivo dado,
@@ -301,25 +315,25 @@ public class CodigoEjercicio2
      * @return posibilidad de encontrar el subgrupo con las condiciones anteriores
      */
     public boolean groupSum5(int start, int[] nums, int target) {
-    if(start>=nums.length) return target==0;//T(n)= c1, donde c1=4
+        if(start>=nums.length) return target==0;//T(n)= c1, donde c1=4
 
-    else if(nums[start]%5==0)
-    return groupSum5(start+1,nums,target-nums[start]);
-    //T(n)= c2+ T(n-1), donde c2=8
-    //T(n)= c2 n + c1 
-    //T(n)= n 
+        else if(nums[start]%5==0)
+        return groupSum5(start+1,nums,target-nums[start]);
+        //T(n)= c2+ T(n-1), donde c2=8
+        //T(n)= c2 n + c1 
+        //T(n)= n 
 
-    else if(start>1 && nums[start]==1 &&  nums[start-1]%5==0)
-    return groupSum5(start+1,nums,target);
-    //T(n)= c3+ T(n-1), donde c3=12
-    //T(n)= c3 n + c1 
-    //T(n)= n 
+        else if(start>1 && nums[start]==1 &&  nums[start-1]%5==0)
+        return groupSum5(start+1,nums,target);
+        //T(n)= c3+ T(n-1), donde c3=12
+        //T(n)= c3 n + c1 
+        //T(n)= n 
 
-    else return groupSum5(start+1,nums,target-nums[start])|| groupSum5(start+1,nums,target); 
-    //T(n)= c4+ T(n-1)+ T(n-1), donde c4=8
-    //T(n)=c4((2^n) -1)+ c1 2^(n-1)
-    //T(n)= 2^n 
-    //complejidad: O(2^n) exponencial
+        else return groupSum5(start+1,nums,target-nums[start])|| groupSum5(start+1,nums,target); 
+        //T(n)= c4+ T(n-1)+ T(n-1), donde c4=8
+        //T(n)=c4((2^n) -1)+ c1 2^(n-1)
+        //T(n)= 2^n 
+        //complejidad: O(2^n) exponencial
     }
 
     }
