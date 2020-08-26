@@ -8,28 +8,7 @@
  */
 public class CodigoEjercicio1
 { 
-    /**
-     * La clase compRect permite saber de cuántas maneras se puede completar o llenar
-     * un rectángulo de dimensiones 2*n cm^2, con baldosas de tamaño 2*1 cm^2
-     * @param x longitud en x o base del rectángulo
-     * @return int número de formas en que se pueden acomodar las baldosas en el rectangulo tal que este quede
-     * totalmente completo
-     */
-    public static int compRect(int x){
-        if(x==0){
-            return 1;
-        } 
-        else if(x<0){
-            return 0;
-        } 
-        else{
-            return compRect(x-2) + compRect(x-1);
-            // t(n)= c1 + t(n-2) + t(n-1), donde ci=5
-            // t(n)= 2^n
-            // complejidad: O(2^n) exponencial
-      }
-  }
-    
+    //****************************** Ejercicio 1.1 **************************************
       /**
      * Este metodo calcula la longitud de la subsecuencia más larga en comun entre 2 cadenas
      * 
@@ -39,7 +18,7 @@ public class CodigoEjercicio1
      */
     
     public static int subsecuencia(String cadena1, String cadena2){
-        return subsecuencia(cadena1,cadena2,cadena1.length()-1,cadena2.length()-1);
+        return subsecuencia(cadena1,cadena2,cadena1.length(),cadena2.length());
     }
 
     /**
@@ -59,7 +38,7 @@ public class CodigoEjercicio1
             return 0; // T(p) = c1, donde c1 = 5
         }
         
-        if(cadena1.charAt(m)==cadena2.charAt(n)){
+        if(cadena1.charAt(m-1)==cadena2.charAt(n-1)){
            
             return 1 + subsecuencia(cadena1,cadena2, m-1, n-1); 
         // T(p) = c2 + T(p-2), donde c2 = 10
@@ -85,5 +64,29 @@ public class CodigoEjercicio1
           
   
     }
+    
+     //****************************** Ejercicio 1.2 **************************************
+    /**
+     * La clase compRect permite saber de cuántas maneras se puede completar o llenar
+     * un rectángulo de dimensiones 2*n cm^2, con baldosas de tamaño 2*1 cm^2
+     * @param x longitud en x o base del rectángulo
+     * @return int número de formas en que se pueden acomodar las baldosas en el rectangulo tal que este quede
+     * totalmente completo
+     */
+    public static int compRect(int x){
+        if(x==0){
+            return 1;
+        } 
+        else if(x<0){
+            return 0;
+        } 
+        else{
+            return compRect(x-2) + compRect(x-1);
+            // t(n)= c1 + t(n-2) + t(n-1), donde ci=5
+            // t(n)= 2^n
+            // complejidad: O(2^n) exponencial
+      }
+  }
+    
 }
     
