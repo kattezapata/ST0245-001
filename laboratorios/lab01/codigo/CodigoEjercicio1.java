@@ -74,7 +74,7 @@ public class CodigoEjercicio1
         }
         
         return Math.max(subsecuencia(cadena1, cadena2,m-1, n), subsecuencia(cadena1, cadena2, m, n-1));
-        // T(p) = c3 + T(p-1) + T(p-1), donde c3 = 10
+        // T(p) = c3 + T(p-1) + T(p-1), donde c3 =4
         // T(p) = c3((2^p)-1) + c1 * 2^(p-1)
         // T(p) = (c3 + (c1/2)) *(2^p) - c3 
         // T(p) = O((c3 + (c1/2)) *(2^p) - c3)
