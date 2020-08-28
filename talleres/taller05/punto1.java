@@ -16,7 +16,7 @@ public class punto1{
      */
     public static void insertionSort(int[] a){
         cicloMayor(a);
-    }
+    } // T(n)=c1; c1=1
 
     /**
      * El método cicloMayor es un método que ayuda en el recorrido del arreglo.
@@ -30,6 +30,7 @@ public class punto1{
         for(int i = 0; i < a.length; i++ )
             cicloMenoraMayor(a, i);
     }
+    // T(n)= c2*n + c3, donde c2= 3 y c3= 2
 
     /**
      * El método cicloMenoraMayor es un método que ayuda en el recorrido del arreglo.
@@ -41,7 +42,7 @@ public class punto1{
     public static void cicloMenoraMayor(int[] a, int n){
         for(int j = n; j > 0 ; j--)
             MenorMayor(a, j, j-1);
-    }
+    } // T(n)= c4*n + c5, donde c4=2 y c5= 3
 
     /**
      * El método MenorMayor identifica si el elemento en la posición n es mayor o menor al elemento
@@ -55,7 +56,7 @@ public class punto1{
     public static void MenorMayor(int[] a, int izq, int der){
         if (a[der] < a[izq])
             intercambiar(a, izq, der);
-    }
+    } // T(n)= c6, donde c6= 5
 
     /**
      * El método intercambiar es un método que intercambia de posición los los elementos
@@ -68,24 +69,13 @@ public class punto1{
         int aux = a[izq];
         a[izq] = a[der];        
         a[der] = aux;
-    }
+    }// T(n)= c7, donde c7= 8
 
-
-    public static void main(String [] args){
-
-        for(int n=9979;n<9999;n++){
-            int [] arr = new int[n];
-            for (int i=arr.length-1; i==0; i++){
-                arr[i]= i;
-            }
-            long tiempoInicial=System.currentTimeMillis();
-            insertionSort(arr);
-            long tiempoFinal=System.currentTimeMillis();
-            System.out.println(tiempoFinal-tiempoInicial);
-
-        }
-
-    }
+    // complejidad: 
+    // T(n)= c1+ c2*n + c3 +  c4*n + c5+ c6 + c7
+    // T(n) = C8*n (Regla de la suma), con C8(constantota)
+    // T(n)= n (Regla del producto)
+    // O(n) (Simetría) Complejidad lineal
 
 
     

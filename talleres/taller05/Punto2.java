@@ -8,16 +8,7 @@
  */
 public class Punto2
 {
-    public static void main(String [] args){
-      
-     for (int n = 10000000; n <= 200000000; n = n + 10000000) {
-        long ti = System.currentTimeMillis();
-        sumaArreglo(new int[n]);
-        long tf = System.currentTimeMillis();
-        System.out.println(tf - ti);
-     }
-    }
-    
+
     public static int sumaArreglo(int [] arreglo){
         int suma=0; // c1 
         for (int i=0;i<arreglo.length;i++){ // c2 + c3n
