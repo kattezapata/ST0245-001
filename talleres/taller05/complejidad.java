@@ -13,10 +13,12 @@ public class complejidad{
 
     public static void main1(){
 
-        for(int n=1000;n<=20000;n=n+1000){
+        for(int n=10000;n<=200000;n=n+10000){
             int [] arr = new int[n];
-            for (int i=arr.length-1; i==0; i++){
-                arr[i]= i;
+            int j=0;
+            for (int i=arr.length-1; i>=0; i--){
+                arr[i]= j;
+                j++;
             }
             long tiempoInicial=System.currentTimeMillis();
             punto1.insertionSort(arr);

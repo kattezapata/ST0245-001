@@ -30,7 +30,10 @@ public class punto1{
         for(int i = 0; i < a.length; i++ )
             cicloMenoraMayor(a, i);
     }
-    // T(n)= c2*n + c3, donde c2= 3 y c3= 2
+    // T(n)= c2*n + c3 + c1, donde c2= 3 y c3= 2
+    // T(n)= c2*n (Regla de la suma)
+    // T(n)= n (Regla del producto)
+
 
     /**
      * El método cicloMenoraMayor es un método que ayuda en el recorrido del arreglo.
@@ -42,7 +45,10 @@ public class punto1{
     public static void cicloMenoraMayor(int[] a, int n){
         for(int j = n; j > 0 ; j--)
             MenorMayor(a, j, j-1);
-    } // T(n)= c4*n + c5, donde c4=2 y c5= 3
+    } // T(n)= (c4*n + c5)*n, donde c4=2 y c5= 3
+      // T(n)= c4*n^2 + c5
+      // T(n)= c4*n^2 (Regla de la suma)
+      // T(n)= n^2 (Regla del producto)
 
     /**
      * El método MenorMayor identifica si el elemento en la posición n es mayor o menor al elemento
@@ -56,7 +62,8 @@ public class punto1{
     public static void MenorMayor(int[] a, int izq, int der){
         if (a[der] < a[izq])
             intercambiar(a, izq, der);
-    } // T(n)= c6, donde c6= 5
+    } // T(n)= n^2 + c6, donde c6= 5
+    // T(n)= n^2 (Regla de la suma)
 
     /**
      * El método intercambiar es un método que intercambia de posición los los elementos
@@ -69,13 +76,12 @@ public class punto1{
         int aux = a[izq];
         a[izq] = a[der];        
         a[der] = aux;
-    }// T(n)= c7, donde c7= 8
+    }// T(n)= c7 + n^2, donde c7= 8
+     // T(n) = n^2
 
-    // complejidad: 
-    // T(n)= c1+ c2*n + c3 +  c4*n + c5+ c6 + c7
-    // T(n) = C8*n (Regla de la suma), con C8(constantota)
-    // T(n)= n (Regla del producto)
-    // O(n) (Simetría) Complejidad lineal
+    // complejidad del algoritmo: 
+    // T(n)= n^2
+    // O(n^2) (Simetría) Complejidad cuadrática
 
 
     
