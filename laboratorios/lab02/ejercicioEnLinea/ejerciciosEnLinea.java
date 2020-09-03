@@ -1,3 +1,10 @@
+**
+ * La clase ejerciciosEnLinea tiene diversos metodos que pretenden darle solucion a 
+ * problemas planteados en el laboratorio 2 del curso estructuras de datos y algoritmos I
+ * @author Laura Katterine Zapata Rendon, Maria Alejandra Velez Clavijo
+ * @version 1
+ */
+
 public class ejerciciosEnLinea {
     /**
      * El método sum13 devuelve la suma de los números de la matriz, 
