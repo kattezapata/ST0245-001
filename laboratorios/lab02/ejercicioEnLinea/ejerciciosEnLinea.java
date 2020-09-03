@@ -75,5 +75,71 @@ public class ejerciciosEnLinea {
         return arr;
       }
 
+    /**
+     * Dadas dos matrices de enteros ordenados en orden creciente,
+     * outer e inner , devuelve verdadero si todos los números
+     * de la matriz inner aparecen en la matriz outer
+     * @param outer Matriz de enteros(exterior)
+     * @param inner Matriz de enteros(interior)
+     * @return boolean Devuelve si es posible que los elementos de una matriz estén en la otra.
+     */
+    public boolean linearIn(int[] outer, int[] inner) {
+      int cont=0;
+      int n=0;
+      for(int i=0; i< outer.length; i++){
+        if((n< inner.length)&& outer[i]== inner[n]){
+          cont=cont+1;
+          n=n+1;
+        }
+      }
+      if(cont==inner.length){
+        return true;
+      }
+      return false;
+      }
+    /**
+     * Dada una matriz no vacía, devuelve verdadero
+     * si hay un lugar para dividir la matriz de modo que
+     * la suma de los números de un lado sea igual a la suma de
+     * los números del otro lado.
+     * @param nums Matriz de enteros
+     * @return boolean Devuelve si hay posibilidad de hacer una división de matrices con las condiciones dadas
+     * 
+     */
+    public boolean canBalance(int[] nums) {
+      int sum1=0;
+      int sum2=0;
+      for(int n=0; n<nums.length; n++){
+        sum1= sum1+ nums[n];
+        }
+      for(int i=0; i< nums.length; i++){
+        sum1=sum1-nums[i];
+        sum2= sum2+nums[i];
+        if(sum1==sum2){
+          return true;
+          }
+        }
+        return false;
+      }
+     /**
+      * Supongamos que un "grupo" en una matriz es una
+       serie de 2 o más elementos adyacentes del mismo valor.
+       El método countClumps devuelve el número de grupos en la matriz dada
+      * @param nums Matiz de enteros
+      * @return Número de grupos formados
+      */
+      public int countClumps (int [] nums) {
+        int cont = 0;
+        for (int i = 0; i <nums.length-1; i ++) {
+        if (nums [i] == nums [i + 1]){
+          if(i == 0 || nums [i-1]!= nums [i]){
+        cont=cont+1;
+        }
+        }
+        }
+        return cont;
+        }
+        
+
       
 }
