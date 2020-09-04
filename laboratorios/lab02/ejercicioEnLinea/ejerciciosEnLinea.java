@@ -33,12 +33,13 @@ public class ejerciciosEnLinea {
         }
         if(nums[i]==13){
           
-          return sum13(nums, i+2, sum);
+          return sum13(nums, i+2, sum); // T(n)= T(n-2) -> O(n)
         }
         else{
         sum= sum + nums[i]; 
-        return sum13(nums, i+1, sum);
+        return sum13(nums, i+1, sum);// O(n)
         }
+        // Complejidad O(n)
       }
 
     /**
@@ -53,6 +54,7 @@ public class ejerciciosEnLinea {
           a[i]=i;
         }
         return a;
+        // Complejidad O(n)
       }
     /**
      * Diremos que un elemento en una matriz está "solo" si hay valores antes
@@ -80,6 +82,7 @@ public class ejerciciosEnLinea {
           
         }
         return arr;
+        // Complejidad O(n)
       }
 
     /**
@@ -103,6 +106,7 @@ public class ejerciciosEnLinea {
         return true;
       }
       return false;
+      // Complejidad O(n)
       }
     /**
      * Dada una matriz no vacía, devuelve verdadero
@@ -127,6 +131,7 @@ public class ejerciciosEnLinea {
           }
         }
         return false;
+        // Complejidad O(n)
       }
      /**
       * Supongamos que un "grupo" en una matriz es una
@@ -136,15 +141,16 @@ public class ejerciciosEnLinea {
       * @return Número de grupos formados
       */
       public int countClumps (int [] nums) {
-        int cont = 0;
-        for (int i = 0; i <nums.length-1; i ++) {
-        if (nums [i] == nums [i + 1]){
+        int cont = 0; 
+        for (int i = 0; i <nums.length-1; i ++) { 
+        if (nums [i] == nums [i + 1]){ 
           if(i == 0 || nums [i-1]!= nums [i]){
         cont=cont+1;
         }
         }
         }
         return cont;
+        // Complejidad O(n)
         }
         
 
