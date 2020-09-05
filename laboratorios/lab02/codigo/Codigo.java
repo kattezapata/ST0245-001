@@ -94,8 +94,10 @@ public class Codigo
     }
     // complejidad del algoritmo: 
     // T(n)= n*log(n)
-    // O(n*log(n)) (Simetría) Complejidad logaritmica
+    // O(n*log(n)) (Simetria) Complejidad logaritmica
 
+    
+    
      //****************Insertion Sort*********************
     
     /**
