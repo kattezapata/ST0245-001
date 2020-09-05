@@ -7,6 +7,22 @@
 
 public class ejerciciosEnLinea {
     /****************************Array 2******************************************
+     /**
+     * El metodo countEvens retorna la cantidad de enteros pares en un arreglo .
+     * 
+     * @param nums arreglo de enteros
+     * @return numero de pares en el arreglo
+     */
+    public int countEvens(int[] nums) {
+        int numPares=0;
+        for(int i : nums){
+            if(i % 2 ==0){
+                numPares++;
+            }
+        }
+        return numPares;
+    }
+    
     /**
      * El método sum13 devuelve la suma de los números de la matriz, 
      * devolviendo 0 para una matriz vacía. 
