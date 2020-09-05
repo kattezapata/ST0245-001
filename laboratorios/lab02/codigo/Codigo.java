@@ -14,7 +14,7 @@ public class Codigo
             int [] arr = new int[n];
             int j=0;
             for (int i=arr.length-1; i>=0; i--){
-                arr[i]= j;
+                arr[j]= i;
                 j++;
             }
             long tiempoInicial=System.currentTimeMillis();
@@ -29,7 +29,7 @@ public class Codigo
             int [] arr = new int[n];
             int j=0;
             for (int i=arr.length-1; i>=0; i--){
-                arr[i]= j;
+                arr[j]= i;
                 j++;
             }
             long tiempoInicial=System.currentTimeMillis();
