@@ -7,9 +7,9 @@
 
 public class Codigo
 {
-    //**********Merge sort***********
+    //*******************Merge Sort**********************
     public static void main(String []args){
-    
+      //Hallar los 20 tiempos para MergeSort
         for(int n=10000;n<=200000;n=n+10000){
             int [] arr = new int[n];
             int j=0;
@@ -19,6 +19,21 @@ public class Codigo
             }
             long tiempoInicial=System.currentTimeMillis();
             mergesort(arr);
+            long tiempoFinal=System.currentTimeMillis();
+            System.out.println(tiempoFinal-tiempoInicial);
+
+        }
+        
+     //Hallar los 20 tiempos para InsertionSort
+        for(int n=10000;n<=200000;n=n+10000){
+            int [] arr = new int[n];
+            int j=0;
+            for (int i=arr.length-1; i>=0; i--){
+                arr[i]= j;
+                j++;
+            }
+            long tiempoInicial=System.currentTimeMillis();
+            insertionSort(arr);
             long tiempoFinal=System.currentTimeMillis();
             System.out.println(tiempoFinal-tiempoInicial);
 
@@ -77,7 +92,12 @@ public class Codigo
             Array[izqG++]= aux[izq1++]; //primera mitad (si los hay)
 
     }
+    // complejidad del algoritmo: 
+    // T(n)= n*log(n)
+    // O(n*log(n)) (Simetría) Complejidad logaritmica
 
+     //****************Insertion Sort*********************
+    
     /**
      * El método intertionSort sirve como método auxiliar, el cual le pasa el array a que recibe
      * como parámetro, al método cicloMayor
