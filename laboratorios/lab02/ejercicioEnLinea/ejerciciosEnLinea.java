@@ -7,6 +7,7 @@
 
 public class ejerciciosEnLinea {
     /****************************Array 2******************************************
+     
      /**
      * El metodo countEvens retorna la cantidad de enteros pares en un arreglo .
      * 
@@ -21,6 +22,22 @@ public class ejerciciosEnLinea {
             }
         }
         return numPares;
+    }
+    
+     /**
+     * El método lucky13 retorna true si no hay 1's o 3's en el arreglo de enteros.
+     * 
+     * @param nums arreglo de enteros
+     * @return true si no hay 1's o 3's y false si hay 1's o 3's
+     */
+    public boolean lucky13(int[] nums) {
+        boolean contain=true;
+        for(int i : nums){
+            if(i==1 || i==3){
+                contain=false;
+            }
+        }
+        return contain;
     }
     
     /**
