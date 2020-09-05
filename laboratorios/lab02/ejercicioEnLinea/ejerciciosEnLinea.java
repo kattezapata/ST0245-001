@@ -264,5 +264,38 @@ public class ejerciciosEnLinea {
         }
         return array;
     }
+    
+     /**
+     * El método squareUp dado un entero n, retorna un arreglo de enteros 
+     * con la serie de la forma para n=3: {0, 0, 1,    0, 2, 1,    3, 2, 1}.
+     * 
+     * @param n numero hasta donde va la serie
+     * @return el arreglo de enteros con la serie
+     */
+    public int[] squareUp(int n) {
+        int n0=n-1; //numero de ceros
+        int index=0; //posicion del elemento a ingresar
+        int [] array=new int[n*n];
+
+        for(int i=1;i<=n;i++){
+            //añadir ceros
+            for(int j=1;j<=n0;j++){
+                array[index]=0;
+                index++;
+
+            }
+            n0--;
+
+            // añadir serie de numeros
+            for(int j=i;j>0;j--){
+                array[index]=j;
+                index++;
+
+            }
+
+        }
+
+        return array;
+    }
 
 }
