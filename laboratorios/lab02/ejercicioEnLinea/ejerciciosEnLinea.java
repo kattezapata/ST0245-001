@@ -41,6 +41,36 @@ public class ejerciciosEnLinea {
     }
     
     /**
+     * El método matchUp dados dos arreglos de enteros compara cada elemento en la misma posición
+     * y determina cuantos de ellos son diferentes y se encuentran en un 
+     * rango de 2 numeros por encima o 2 numeros por debajo
+     * 
+     * @param nums1 primer arreglo de enteros
+     * @param nums2 segundo arreglo de enteros
+     * @return cuantos elementos en la misma posición cumplen la condicion
+     */
+    public int matchUp(int[] nums1, int[] nums2) {
+
+        int total=0;
+
+        for(int i=0 ; i<nums1.length ; i++){
+
+            if(nums1[i]!=nums2[i]){
+
+                int max=nums1[i]+2;
+                int min=nums1[i]-2;
+
+                if(nums2[i]>=min && nums2[i]<=max){
+                    total++;
+                }
+
+            }
+
+        }
+        return total;
+    }
+    
+    /**
      * El mÃ©todo sum13 devuelve la suma de los nÃºmeros de la matriz, 
      * devolviendo 0 para una matriz vacÃ­a. 
      * Excepto que el nÃºmero 13 no se cuenta y los nÃºmeros que vienen
