@@ -242,5 +242,27 @@ public class ejerciciosEnLinea {
         return max;
 
     }
+   
+    
+    /**
+     * El método seriesUp dado un entero n, retorna un arreglo de enteros 
+     * con la serie de la forma {1,    1, 2,    1, 2, 3,   ... 1, 2, 3 .. n}.
+     * 
+     * @param n numero hasta donde va la serie
+     * @return el arreglo de enteros con la serie
+     */
+    public int[] seriesUp(int n) {
+        int index=0;
+        int length=(n*(n+1))/2;
+        int [] array = new int[length];
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                array[index]=j;
+                index++;
+            }
+
+        }
+        return array;
+    }
 
 }
