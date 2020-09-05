@@ -146,6 +146,9 @@ public class ejerciciosEnLinea {
         return arr;
       }
 
+    
+    /****************************Array 3******************************************
+     
     /**
      * Dadas dos matrices de enteros ordenados en orden creciente,
      * outer e inner , devuelve verdadero si todos los números
@@ -192,6 +195,7 @@ public class ejerciciosEnLinea {
         }
         return false;
       }
+    
      /**
       * Supongamos que un "grupo" en una matriz es una
        serie de 2 o más elementos adyacentes del mismo valor.
@@ -211,6 +215,32 @@ public class ejerciciosEnLinea {
         return cont;
         }
         
+     /**
+     * El m�todo maxSpan dado un arreglo de enteros, encuentra dos elementos que sean iguales 
+     * y establece como longitud la cantidad de elementos que hay entre ellos,incluyendolos.
+     * Luego devuelve la mayor longitud encontrada.
+     * 
+     * @param nums arreglo de enteros
+     * @return la maxima longitud(span) encontrada
+     */
+    public int maxSpan(int[] nums) {
 
-       /****************************Array 3******************************************
+        int max=0;
+        int span=0;
+        for(int i=0;i<nums.length;i++){
+            for(int j=nums.length-1;j>=0;j--){
+                if(nums[i]==nums[j]){
+                    span=(j-i)+1;
+                    if(span>max){
+                        max=span;
+                    }
+                }
+
+            }
+
+        }
+        return max;
+
+    }
+
 }
