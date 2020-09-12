@@ -28,18 +28,18 @@ public class ejerciciosEnLinea {
      * @return suma de los elementos
      */
     private int sum13(int[] nums, int i , int sum ){
-        if(i>= nums.length){
-          return sum;
+        if(i>= nums.length){ 
+          return sum;// T(n)= c1
         }
         if(nums[i]==13){
           
-          return sum13(nums, i+2, sum); // T(n)= T(n-2) -> O(n)
+          return sum13(nums, i+2, sum); // T(n)= T(n-2) + c2 -> O(n)
         }
         else{
         sum= sum + nums[i]; 
-        return sum13(nums, i+1, sum);// O(n)
-        }
-        // Complejidad O(n)
+        return sum13(nums, i+1, sum);// T(n)= c3 + t(n-1) 
+                                      // T(n) = c*n + c_1 
+        // Complejidad para el peor de los casos es:  O(n)
       }
 
     /**
@@ -120,17 +120,17 @@ public class ejerciciosEnLinea {
     public boolean canBalance(int[] nums) {
       int sum1=0;
       int sum2=0;
-      for(int n=0; n<nums.length; n++){
+      for(int n=0; n<nums.length; n++){// O(n)
         sum1= sum1+ nums[n];
         }
-      for(int i=0; i< nums.length; i++){
+      for(int i=0; i< nums.length; i++){// O(n)
         sum1=sum1-nums[i];
         sum2= sum2+nums[i];
         if(sum1==sum2){
-          return true;
+          return true; //O(c*n))
           }
         }
-        return false;
+        return false; 
         // Complejidad O(n)
       }
      /**
