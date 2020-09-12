@@ -1,6 +1,6 @@
 
    
-    /** 
+  /** 
  * Esta clase tiene como objetivo implementar una lista simplemente enlazada
  * que permite borrar, insertar y buscar elementos en cualquier posición
  * @author Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendon
@@ -237,7 +237,6 @@ public class LinkedList{
 
     }
 
-
     public static int 
     max(LinkedList lista){
 
@@ -245,13 +244,9 @@ public class LinkedList{
 
     }
 
-
     /**
-
      * El método max nos permite obtener el número de máximo valor
-
      * en una lista
-
      * 
     @param LinkedList lista del cual se va obtener el número de valor máximo
 
@@ -281,5 +276,32 @@ public class LinkedList{
 
         }
     }
-}
 
+    /**
+     * El método comparar permite verificar si dos listas son iguales
+     * @param lista1 primer lista a comparar
+     * @param lista2 segunda lista a comparar
+     * @return boolean true si las listas son iguales de lo contrario retorna false
+     */
+    public boolean comparar(LinkedList lista1,LinkedList lista2){
+        if(lista1.size!= lista2.size){
+            return false;
+        } else{
+            return comparar(lista1.first, lista2.first);
+        }
+    }
+
+    private boolean comparar(Node temp1,Node temp2){
+        if(temp1==null || temp2==null){// Condición de parada 
+            return true;
+        }
+        else{
+            if(temp1.data != temp2.data){
+                return false;
+            }
+            else{
+                return comparar(temp1.next, temp2.next);
+            }
+        }
+    }
+}
