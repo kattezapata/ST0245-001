@@ -9,7 +9,7 @@ public class TestLinkedList
     public static void main(String []args) throws IndexOutOfBoundsException {
         try{
             LinkedList list = new LinkedList();
-            LinkedList list2 = new LinkedList();
+           // LinkedList list2 = new LinkedList();
             //********** Metodo size() **************
             System.out.println("Size(0): "+list.size());
 
@@ -22,15 +22,16 @@ public class TestLinkedList
             list.insert(0, 0);
            list.insert(100, 3);
 
-            list2.insert(0, 0);
+            /*list2.insert(0, 0);
             list2.insert(1, 1);
             list2.insert(2, 2);
             list2.insert(3, 3);
             list2.insert(4, 4);
             list2.insert(5, 5);
+            */
 
-            System.out.println( "El máximo es: "+ list.max(list));
-            System.out.println("¿ Son iguales?"+ list.comparar(list, list2));
+           // System.out.println( "El máximo es: "+ list.max(list));
+           // System.out.println("¿ Son iguales?"+ list.comparar(list, list2));
 
             System.out.println("Size : "+list.size());
             //********** Metodo get() **************
