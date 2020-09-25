@@ -1,6 +1,6 @@
 
 /**
- * La clase CodigoEnLinea implementa un algoritmo que resuelve el problema del teclado roto. 
+ * La clase EjercicioEnLinea implementa un algoritmo que resuelve el problema del teclado roto. 
  * En donde '[' significa que la tecla Inicio fue presionada internamente,
  * y ']'significa que la tecla 'Fin' fue presionada internamente.
  * 
@@ -9,7 +9,7 @@
  */
 import java.util.LinkedList;
 
-public class CodigoEnLinea
+public class EjercicioEnLinea
 {
     public static void main(String []args){
         System.out.println(tecladoRoto("This_is_a_[Beiju]_text"));
