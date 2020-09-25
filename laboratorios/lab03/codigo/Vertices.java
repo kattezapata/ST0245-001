@@ -1,10 +1,12 @@
 import java.io.*;
 import java.util.ArrayList;
 /**
- * Write a description of class Vertices here.
+ * La clase Vertices contribuye en el algoritmo que permite
+ * crear una estructura de datos con el
+ * mapa de una ciudad. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón 
+ * @version 1
  */
 public class Vertices
 {   
@@ -13,7 +15,11 @@ public class Vertices
     static ArrayList<String> Y = new ArrayList<>();
     static ArrayList<String> nombre = new ArrayList<>();
 
-
+    /**
+     * El método llenarArr permite llenar las listas
+     * que contienen la información de cada sitio de la ciudad
+     * @param arr arreglo que contiene la información de cada sitio
+     */
     public static void llenarArr(String[] arr){
         if(arr.length>=1){
             ID.add(arr[0]);
@@ -30,6 +36,12 @@ public class Vertices
 
     }
 
+    /**
+     * El método obtCoordenadas permite obtener las coordenadas de un sitio
+     * pasandole el ID
+     * @param id ID del sitio
+     * @return String con las coordenadas del lugar
+     */
     public static String obtCoordenadas(String id){
         int index=-1;
         if(ID.contains(id)){
@@ -40,6 +52,12 @@ public class Vertices
 
     }
 
+/**
+     * El método obtNombre permite obtener el nombre de un sitio
+     * pasandole el ID
+     * @param id ID del sitio
+     * @return String con el nombre del lugar
+     */
     public static String obtNombre(String id){
         int index=-1;
         if(ID.contains(id)){
@@ -49,7 +67,14 @@ public class Vertices
         return ""+ index+ "";
 
     }
-
+    
+/**
+     * El método obtNombre permite obtener el nombre de un sitio
+     * pasandole las coordenadas
+     * @param y coordenada Y del sitio
+     * @param x coordenada X del sitio
+     * @return String con el nombre del lugar
+     */
     public static String obtNombre(String y, String x){
         int index=-1;
         if(X.contains(x)&& Y.contains(y)){
@@ -58,7 +83,13 @@ public class Vertices
         }
         return ""+ index+ "";
     }
-
+/**
+     * El método obtId permite obtener el nombre de un sitio
+     * pasandole las coordenadas
+     * @param y coordenada Y del sitio
+     * @param x coordenada X del sitio
+     * @return String con el ID del lugar
+     */
     public static String obtId(String y, String x){
         int index=-1;
         if(X.contains(x)&& Y.contains(y)){
