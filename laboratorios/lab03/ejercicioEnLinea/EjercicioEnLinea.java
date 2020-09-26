@@ -59,21 +59,23 @@ public class EjercicioEnLinea
         }
 
         if(fin==true){
-            lista.addLast(cadena.toString()); //T(n)=1
+            lista.addLast(cadena.toString()); //T(n)= 1
         }else{
-            lista.addFirst(cadena.toString()); //T(n)=1
+            lista.addFirst(cadena.toString()); //T(n)= 1
         }
 
         String texto="";
-        while(lista.size()>0){ //T(n)=n
-            texto=texto+lista.pollFirst();  //T(n)=1
+        while(lista.size()>0){ //T(m) = m
+            texto=texto+lista.pollFirst();  //T(m) = 1*m = m
 
         }
 
         return texto;
     }
-        //Complejidad del algoritmo: T(n)=n+1+n = 2n + 1
-        //O(2n + 1) = O(2n) = O(n) -> Complejidad asintotica lineal
+        //Complejidad del algoritmo: T(n,m)= n+1+m = n + m
+        //O(n + m) -> Complejidad asintotica 
 
 }
+// n : Numero de caracteres de la cadena que se quiere ordenar
+// m: Numero de nodos de la lista, es decir la cantidad de palabras separadas por "[" y "]" que tenga la cadena a ordenar
 
