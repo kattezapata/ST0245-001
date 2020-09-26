@@ -21,7 +21,7 @@ public class Lector
             while((cadena= br.readLine())!= null){ //T(n) = n
                 // Arcos.llenarArr(cadena.split(","));
                 Vertices.llenarArr(cadena.split(",")); // T(n,m)= (n*m)*n
-            } /// T(n,m)= n^2*m 
+            } /// T(n,m)= (n^2)*m 
 
             /**
             System.out.println( " Id: "+ Arcos.ID.get(311240)+ " Id1: "+ Arcos.ID1.get(311240)+ 
@@ -35,15 +35,15 @@ public class Lector
             System.out.println( Vertices.obtNombre(Vertices.ID.get(56536)));  //T(n)=n
             System.out.println( Vertices.obtNombre((Vertices.Y.get(56536)),( Vertices.X.get(56536))));  //T(n)=n
             System.out.println( Vertices.obtId((Vertices.Y.get(56536)),( Vertices.X.get(56536))));  //T(n)=n
-        
+        //T(n) = n+n+n+n = 4n
             
            
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
-        //T(n,m)= n^2 * m
+        //T(n,m)= (n^2) * m 
         //O(n^2 * m)
     }
 }
 // n : cantidad de lineas que tenga el archivo.txt
-// m : cantidad de cadenas de cada linea del archivo.txt tenga
+// m : cantidad de cadenas que tiene cada linea del archivo.txt
