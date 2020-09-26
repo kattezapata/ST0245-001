@@ -81,4 +81,4 @@ public class Arcos
     //O(4n) = O(n)(regla del producto) Compleidad lineal
 }
 
-// n = numero de elementos de los arrayList( todos tienen el mismo tamaño), n es igual a la cantidad de lineas del archivo
+// n : numero de elementos de los arrayList(todos tienen el mismo tamaño), n es igual a la cantidad de lineas del archivo.txt
