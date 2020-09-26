@@ -107,4 +107,4 @@ public class Vertices
       // O(3n)= O(n)(regla del producto) Compleidad lineal
 
 }
-//n: // n = numero de elementos de los arrayList( todos tienen el mismo tamaño), n es igual a la cantidad de lineas del archivo.txt
+//n: numero de elementos de los arrayList(todos tienen el mismo tamaño), n es igual a la cantidad de lineas del archivo.txt
