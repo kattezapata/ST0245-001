@@ -1,6 +1,6 @@
 import javafx.util.Pair;
 /**
- * Write a description of class Node here.
+ * La clase Node implementa un nodo de un arbol binario de búsqueda.
  * 
  * @author (Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón) 
  * @version (1)

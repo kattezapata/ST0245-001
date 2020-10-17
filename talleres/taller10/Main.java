@@ -1,6 +1,6 @@
 import javafx.util.Pair;
 /**
- * Write a description of class Main here.
+ * La clase main realiza pruebas a los métodos de la clase Tree.
  * 
  * @author (Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón) 
  * @version (1)
@@ -13,11 +13,16 @@ public class Main
 
         tree.insert("Maria",123123);
         tree.insert("Juan",321321);
-        tree.insert("Juan",111111);
-        tree.insert("Juan",111112);
-        tree.insert("Juan",222222);
-        tree.insert("Juan",4);
-        tree.insert("Juan",999999);
+        tree.insert("Carlos",111111);
+        tree.insert("Laura",111112);
+        tree.insert("Alejandra",222222);
+        tree.insert("Katterine",4);
+        tree.insert("Julian",999999);
+        tree.insert("Mauricio",2);
+        tree.insert("Camila",800);
+        tree.insert("Alvaro",1000000);
+        tree.insert("Mariana",700000);
+         
         System.out.println("InOrder:");
         tree.printInOrder();
         System.out.println();
@@ -31,6 +36,7 @@ public class Main
         System.out.println(tree.getSize());
         System.out.println(tree.contains("Maria",123123));
         System.out.println(tree.contains("Jose",564735));
-
+        tree.graficarArbol(tree.getRoot());
+        System.out.println(tree.getCodigo());
     }
 }

@@ -1,6 +1,7 @@
 import javafx.util.Pair;
+
 /**
- * Write a description of class Tree here.
+ * La clase Tree implementa un arbol binario de búsqueda.
  * 
  * @author (Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón) 
  * @version (1)
@@ -9,6 +10,7 @@ public class Tree
 {
     private Node root;
     private int size;
+    private  String codigo="";
 
     public Tree(){
         this.root=null;
@@ -17,6 +19,10 @@ public class Tree
 
     public int getSize(){
         return this.size;
+    }
+
+    public Node getRoot(){
+        return this.root;
     }
 
     public void insert(String nombre,Integer numero){
@@ -141,6 +147,31 @@ public class Tree
         //T(n) = T(n/2) + T(n/2)+ c1
         //O(n)
         //n: numero de nodos en el arbol
+        //array=new ArrayList<String>();
     }
 
+    public String getCodigo(){
+        return this.codigo;
+    }
+
+    public void graficarArbol(Node node){
+
+        if(node.getLeft()==null || node.getRight()==null){
+            return;
+        }
+        else{
+            codigo=codigo+node.getData().getValue()+" -> ";
+            if(node.getLeft() != null){
+                codigo=codigo+node.getLeft().getData().getValue()+" ";
+                graficarArbol(node.getLeft());
+            }
+
+            codigo=codigo+node.getData().getValue()+" -> ";
+            if(node.getLeft() != null){
+                codigo=codigo+node.getRight().getData().getValue()+" ";
+                graficarArbol(node.getRight());
+            }
+
+        }
+    }
 }
