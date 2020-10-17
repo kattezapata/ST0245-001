@@ -22,8 +22,9 @@ public class impurezaGini
         for(int i=0; i< array.length; i++){
             if(array[i][pos].equals(val)){
                 igual++;
-            }
-        }
+            } // n número de filas
+
+        }// O(n)
         int noIgual=array.length-igual;
         int fila=0;
         int filaIgual=0;
@@ -40,7 +41,7 @@ public class impurezaGini
                 filaDiferente++;
                 fila++;
             }
-        }
+        }//O(n)
         Pair<String[][], String[][]> pareja= new Pair(iguales, noIguales);
         return pareja;
 
@@ -58,7 +59,8 @@ public class impurezaGini
             if(arr[i][(arr[0].length)-1].equals("1")){
                 ext++;
             }
-        }
+        }//O(n)
+        // n número de filas
         int noExt=arr.length-ext;
         float propExito=0;
         float propNoExito=0;
@@ -80,14 +82,15 @@ public class impurezaGini
      * @return float impureza ponderada
      */
     public static float impurezaPonderada(String[][] arr, int pos, String val){
-        Pair<String[][], String[][]> pareja= dividirDatos(arr,pos,val);
-        float derecho= impurezaGini(pareja.getKey());
-        float izquierdo= impurezaGini(pareja.getValue());
+        Pair<String[][], String[][]> pareja= dividirDatos(arr,pos,val); // O(n)
+        float derecho= impurezaGini(pareja.getKey()); // O(n)
+        float izquierdo= impurezaGini(pareja.getValue()); // O(n)
         int numDer= pareja.getKey().length;
         int numIzq=pareja.getValue().length;
         float impurezaPonderada= ((numDer*derecho)+(numIzq*izquierdo))
             /(numDer+numIzq);
         return impurezaPonderada;
+        // O(n)
 
     }
 
@@ -104,8 +107,9 @@ public class impurezaGini
         for(int i=0; i<arr.length; i++){
             if(arr[i][pos]!=null && arr[i][pos]!=""){
                 valores.add(arr[i][pos]);
+                //O(1)
             }
-        }
+        }// O(n)
         String[] array= new String[valores.size()];
         return valores.toArray(array);
     }
@@ -119,7 +123,7 @@ public class impurezaGini
      */
 
     public static Pair<Integer, String> mejorCondicion(String[][] arr){
-        String[] valores;
+        String[][] valores = new String[arr[0].length-1][];
         Pair<Integer, String> pareja;
         float menorImpureza=1;
         float menorImpurezaT=1;
@@ -127,13 +131,14 @@ public class impurezaGini
         String mejorValorT="";
         int columna=-1;
         for(int i=0; i<arr[0].length-1; i++){
-            valores = posiblesValores(arr,i);
-            for(String valor: valores){
-                float impurezaPonderada= impurezaPonderada(arr, i, valor);
-
+            valores[i]= posiblesValores(arr, i); 
+        }
+        for(int i=0; i< valores.length;i++){
+            for(int j=0; j< valores[i].length; j++){
+                float impurezaPonderada= impurezaPonderada(arr, i, valores[i][j]);
                 if(impurezaPonderada<menorImpureza){
                     menorImpureza= impurezaPonderada;
-                    mejorValor=valor;
+                    mejorValor=valores[i][j];
 
                 }
 
