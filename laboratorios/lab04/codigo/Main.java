@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Main here.
+ * La clase Main tiene el objetivo realizar pruebas a los metodos de las clases Reader, Octree y Bee.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Laura Katterine Zapata Rendón, Maria Alejandra Velez Clavijo)
+ * @version (1)
  */
 import java.util.Scanner;
 import java.io.IOException;
@@ -15,9 +15,6 @@ public class Main
     public static void main (String []args) throws IOException {
         Reader rm=new Reader();
         try {
-            //System.out.println("Porfavor ingrese la direccion donde se encuentran las coordenadas de las abejas");
-            //Scanner dir=new Scanner(System.in);
-            //String direccion=dir.nextLine();
 
             rm.leer("10abejas.txt");
 

@@ -10,10 +10,8 @@ import java.util.Collections;
  *Likewise, it is responsible for saving the coordinates of each bee in other LinkedList 
  *corresponding to each coordinate, so that it can be passed to the Octree class, which needs 
  *them to function.
- * @author: Daniel Otero Gomez, Rafael Mateus Carrion. 
- * @version: 4/7/2019/A
- * @see Octree
- * @see Bee
+ * @author (Laura Katterine Zapata Rendón, Maria Alejandra Velez Clavijo)
+ * @version (1)
  */
 public class Reader
 {
@@ -70,15 +68,15 @@ public class Reader
      */
     public void getMaxMin(){
         double minlat=(double)Collections.min(lat);
-        System.out.println("La latitud minima es: "+minlat);
+
         double maxlat=(double)Collections.max(lat);
 
         double minlon=(double)Collections.min(lon);
-        System.out.println("La longitud minima es: "+minlon);
+
         double maxlon=(double)Collections.max(lon);
 
         double minalt=(double)Collections.min(alt);
-        System.out.println("La altura minima es: "+minalt);
+
         double maxalt=(double)Collections.max(alt);
 
         ArrayList<Double> mins=new ArrayList();

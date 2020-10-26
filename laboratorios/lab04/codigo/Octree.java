@@ -4,10 +4,10 @@
  *If more than one bee is found in a quadrant, this quadrant will be divided into multiple subOctrees, found 
  *in the limits of this, until the bee is alone, or within a diagonal quadrant of less than 100 meters in length. 
  *This is done to ensure that all the bees within this quadrant are in danger of colliding.
- * @author: Daniel Otero Gomez, Rafael Mateus Carrion. 
- * @version: 4/7/2019/A
- * @see Octree
- * @see Bee
+ *
+ * @author (Laura Katterine Zapata Rendón, Maria Alejandra Velez Clavijo)
+ * @version (1)
+ * 
  */
 import java.util.ArrayList;
 import java.util.LinkedList;
