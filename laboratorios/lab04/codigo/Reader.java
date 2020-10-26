@@ -32,13 +32,13 @@ public class Reader
             String line;
             while ((line=br.readLine())!=null){
                 splitString(line);
-            } 
+            } //O(n)
             System.out.println("Si encontró el archivo");
         } catch (IOException e){
             e.printStackTrace();
         }
-        getMaxMin();
-    }    
+        getMaxMin();//O(n)
+    }//O(n)
 
     /**
      * This method is in charge of recieving each line of coordinates that is being
@@ -53,7 +53,7 @@ public class Reader
             this.lon.addFirst(Double.parseDouble(str[1]));
             this.alt.addFirst(Double.parseDouble(str[2]));
             Bee bee=new Bee(Double.parseDouble(str[0]),Double.parseDouble(str[1]),Double.parseDouble(str[2]));
-            bees.addFirst(bee);
+            bees.addFirst(bee);//0(1)
         } catch (Exception e){
         }
     }
@@ -86,15 +86,15 @@ public class Reader
         double midD=(minlat-maxlat)/2;
         double midW=(maxlon-minlon)/2;
         double midH=(maxalt-minalt)/2;
-        double ph=Math.sqrt(Math.pow((midD)*111325,2)+Math.pow((midW)*111325,2));
-        double diagonal=Math.sqrt(Math.pow(ph,2)+Math.pow((midH),2));
+        double diagonal=Math.sqrt(Math.pow(Math.sqrt(Math.pow((midD)*111111,2)+Math.pow((midW)*111111,2)),2)+Math.pow((midH),2));
+        //Math.pow((midW)*111325,2) para pasar la latitud de grados a metros se multiplica coseno de la latitud por 111.111. Y eso se eleva al cuadrado
         if (diagonal>100) {
             Octree octree=new Octree();
-            octree.octree(bees,mins,midD,midW,midH);
+            octree.octree(bees,mins,midD,midW,midH);//O(n)
         } else {
-            choque();
+            choque(); //O(n)
         }
-    }
+    }//O(n)
 
     /**
      * This method is in charge of printing all the Bees of this data set,
@@ -103,8 +103,8 @@ public class Reader
     public void choque() {
         System.out.println("Las abejas en las siguientes coordenadas estan en peligro de chocarse");
         for (int i=0;i<bees.size();++i) {
-            Bee bee=bees.poll();
+            Bee bee=bees.poll();//O(1)
             System.out.println(bee.getLatitude()+","+bee.getLongitude()+","+bee.getAltitude());
         }
-    }
+    }//O(n)
 }

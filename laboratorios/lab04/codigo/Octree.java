@@ -48,25 +48,34 @@ public class Octree
             //Crear linkedList vacios para cada pos del arrayList
             for(int j=0;j<8;j++){
                 LinkedList<Bee> lista=new LinkedList();
-                arbol.add(lista);
+                arbol.add(lista); 
             }
-            //añadir cada abeja en la lista enlazada de acuerdo a la posición en el array que arroje la función hashing()
 
-            ArrayList<Double> mids=getMids(abejas);
+            //añadir cada abeja en la lista enlazada de acuerdo a la posición en el array que arroje la función hashing()
+            ArrayList<Double> mids=getMids(abejas);//O(n)
             for(Bee abeja:abejas){
 
-                //ArrayList<Double> minimos=new ArrayList<>();
-
-                arbol.get(this.hashing(abeja,mids)).add(abeja);
-            }
+                arbol.get(this.hashing(abeja,mids)).add(abeja);// O(1)
+            }//O(n)
 
             for(int i=0;i<8;i++){
-                getMins(arbol.get(i));
-                //hacer un nuevo octree para cada posición del arreglo, es decir para cada lista enlazada de abejas
-                nuevoOctree(arbol.get(i),mins,i);
-            }
+                ArrayList<Double> minimos =getMins(arbol.get(i));//O(n)
+
+                //calcular la nueva diagonal
+                double ph=Math.sqrt(Math.pow((midD)*111111,2)+Math.pow((midW)*111111,2));
+                double diagonal=Math.sqrt(Math.pow(ph,2)+Math.pow((midH),2));
+
+                //si la diagonal es menor a 100 entonces hay colisiones
+                if(diagonal<100){
+                    choque(arbol.get(i));//O(n)
+                }else {
+
+                    //hacer un nuevo octree para cada posición del arreglo, es decir para cada lista enlazada de abejas
+                    nuevoOctree(arbol.get(i),minimos,i);//O(n)
+                }
+            }//O(n)
         }
-    }
+    }//O(n)
 
     /**
      * This method will be responsible for receiving each bee that is in the octree, and place it in a certain sector of the data structure, 
@@ -114,7 +123,7 @@ public class Octree
         }
 
         return hashNum;
-    }
+    } //O(1)
 
     /**
      * This method is responsible for making the recursion, with respect to the main octree method. Receive the parameters corresponding to 
@@ -141,73 +150,73 @@ public class Octree
                 arbol.add(lista);
             }
 
+            ArrayList<Double> mids= getMids(abejas); //O(n)
             //añadir cada abeja en la lista enlazada de acuerdo a la posición en el array que arroje la función hashing()
             for(Bee abeja: abejas){
 
-                ArrayList<Double> mids= getMids(abejas);
-                arbol.get(this.hashing(abeja, mids)).add(abeja);
-            }
+                arbol.get(this.hashing(abeja, mids)).add(abeja);//O(1)
+            }//O(n)
 
             for(int i=0;i<8;i++){
                 if(arbol.get(i).size()!=0){
                     //calcular la nueva diagonal
-                    double ph=Math.sqrt(Math.pow((midD)*111325,2)+Math.pow((midW)*111325,2));
+                    double ph=Math.sqrt(Math.pow((midD)*111111,2)+Math.pow((midW)*111111,2));
                     double diagonal=Math.sqrt(Math.pow(ph,2)+Math.pow((midH),2));
 
                     //si la diagonal es menor a 100 entonces hay colisiones
                     if(diagonal<100){
-                        choque(arbol.get(i));
+                        choque(arbol.get(i));//O(n)
                     }else {
 
                         //hacer un nuevo octree para cada posición del arreglo, es decir para cada lista enlazada de abejas
-                        nuevoOctree(arbol.get(i),getMins(arbol.get(i)),i);
+                        nuevoOctree(arbol.get(i),getMins(arbol.get(i)),i);//8*T(n/8) = O(n)
                     }
                 }
 
-            }
+            }//O(n)
         }
 
-    }
+    }//O(n)
 
     public ArrayList<Double> getMins(LinkedList<Bee> abejas){
+        ArrayList<Double> mins=new ArrayList();
         if(abejas.size()!=0){
             LinkedList<Double> lat = new LinkedList();
             LinkedList<Double> lon = new LinkedList();
             LinkedList<Double> alt = new LinkedList();
 
             for(Bee abeja: abejas){
-                lat.addFirst(abeja.getLatitude());
-                lon.addFirst(abeja.getLongitude());
-                alt.addFirst(abeja.getAltitude());
-            }
+                lat.addFirst(abeja.getLatitude()); //O(1)
+                lon.addFirst(abeja.getLongitude()); //O(1)
+                alt.addFirst(abeja.getAltitude()); //O(1)
+            }//O(n)
 
             double minlat=(double)Collections.min(lat);
-            System.out.println("La latitud minima es: "+minlat);
-            double minlon=(double)Collections.min(lon);
-            System.out.println("La longitud minima es: "+minlon);
-            double minalt=(double)Collections.min(alt);
-            System.out.println("La altura minima es: "+minalt);
 
-            ArrayList<Double> mins=new ArrayList();
+            double minlon=(double)Collections.min(lon);
+
+            double minalt=(double)Collections.min(alt);
+
             mins.add(minlat);
             mins.add(minlon);
             mins.add(minalt);
         }
-        ArrayList<Double> mins=new ArrayList();
+
         return mins;
-    }
+    }//O(n)
 
     public ArrayList<Double> getMaxs(LinkedList<Bee> abejas){
+        ArrayList<Double> maxs=new ArrayList();
         if(abejas.size()!=0){
             LinkedList<Double> lat = new LinkedList();
             LinkedList<Double> lon = new LinkedList();
             LinkedList<Double> alt = new LinkedList();
 
             for(Bee abeja: abejas){
-                lat.addFirst(abeja.getLatitude());
-                lon.addFirst(abeja.getLongitude());
-                alt.addFirst(abeja.getAltitude());
-            }
+                lat.addFirst(abeja.getLatitude()); //O(1)
+                lon.addFirst(abeja.getLongitude()); //O(1)
+                alt.addFirst(abeja.getAltitude()); //O(1)
+            }//O(n)
 
             double maxlat=(double)Collections.max(lat);
 
@@ -215,36 +224,33 @@ public class Octree
 
             double maxalt=(double)Collections.max(alt);
 
-            ArrayList<Double> mins=new ArrayList();
-            mins.add(maxlat);
-            mins.add(maxlon);
-            mins.add(maxalt);
+            maxs.add(maxlat);
+            maxs.add(maxlon);
+            maxs.add(maxalt);
         }
 
-        ArrayList<Double> mins=new ArrayList();
-        return mins;
-    }
+        return maxs;
+    }//O(n)
 
     public ArrayList<Double> getMids(LinkedList<Bee> abejas){
+        ArrayList<Double> mids=new ArrayList();
         if(abejas.size()!=0){
-            ArrayList<Double> minimos=getMins(abejas);
-            ArrayList<Double> maximos=getMaxs(abejas);
+            ArrayList<Double> minimos=getMins(abejas);//O(n)
+            ArrayList<Double> maximos=getMaxs(abejas);//O(n)
 
-            double midlat = maximos.get(0)-minimos.get(0);
+            double midlat = (maximos.get(0)-minimos.get(0))/2;
 
-            double midlon = maximos.get(1)-minimos.get(1);
+            double midlon = (maximos.get(1)-minimos.get(1))/2;
 
-            double midalt = maximos.get(2)-minimos.get(2);
+            double midalt = (maximos.get(2)-minimos.get(2))/2;
 
-            ArrayList<Double> mids=new ArrayList();
             mids.add(midlat);
             mids.add(midlon);
             mids.add(midalt);
         }
 
-        ArrayList<Double> mids=new ArrayList();
         return mids;
-    }
+    }//O(n)
 
     /**
      * This sector is in charge of printing all the coordinates of the bees of the sector, if it prints them is because
@@ -255,7 +261,7 @@ public class Octree
         System.out.println("Las abejas en las siguientes coordenadas estan en peligro de chocarse");
         for (Bee abeja:abejas) {
             System.out.println(abeja.getLatitude()+","+abeja.getLongitude()+","+abeja.getAltitude());
-        }
-    }
+        }//O(n)
+    }//O(n)
 
 }
