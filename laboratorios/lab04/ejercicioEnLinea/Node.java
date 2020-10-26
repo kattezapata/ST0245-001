@@ -1,4 +1,4 @@
-import javafx.util.Pair;
+
 /**
  * La clase Node implementa un nodo de un arbol binario de búsqueda.
  * 
@@ -7,20 +7,19 @@ import javafx.util.Pair;
  */
 public class Node
 {
-    private Pair<String,Integer> data;
+    private int data;
     private Node left;
     private Node right;
 
-    public Node(String nombre,Integer numero){
+    public Node(int data){
 
-        this.data=new Pair(nombre,numero);
-
+        this.data=data;
         this.left=null;
         this.right=null;
 
     }
 
-    public Pair<String,Integer> getData(){
+    public int getData(){
         return this.data;
     }
 
