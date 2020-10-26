@@ -76,10 +76,13 @@ public class Point2
      * @param input arreglo de enteros 
      */
     public void exercise21 (int [] input) {
-        buildingTree(input);
+        buildingTree(input); // O(nlogn)
         System.out.println("PosOrder");
-        posOrder(root);
+        posOrder(root);// O(n)
         System.out.println();
+        // T(n)= nlogn + n
+        // O(nlogn)
+        // n: total de elementos del árbol
     }
 
     /**
