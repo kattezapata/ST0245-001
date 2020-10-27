@@ -239,11 +239,14 @@ public class Octree
             ArrayList<Double> maximos=getMaxs(abejas);//O(n)
 
             double midlat = (maximos.get(0)-minimos.get(0))/2;
+            midlat=minimos.get(0)+midlat;
 
             double midlon = (maximos.get(1)-minimos.get(1))/2;
+            midlon=minimos.get(1)+midlon;
 
             double midalt = (maximos.get(2)-minimos.get(2))/2;
-
+            midalt=minimos.get(2)+midalt;
+           
             mids.add(midlat);
             mids.add(midlon);
             mids.add(midalt);

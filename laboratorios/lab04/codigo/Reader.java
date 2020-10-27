@@ -83,14 +83,15 @@ public class Reader
         mins.add(minlat);
         mins.add(minlon);
         mins.add(minalt);
-        double midD=(minlat-maxlat)/2;
-        double midW=(maxlon-minlon)/2;
-        double midH=(maxalt-minalt)/2;
-        double diagonal=Math.sqrt(Math.pow(Math.sqrt(Math.pow((midD)*111111,2)+Math.pow((midW)*111111,2)),2)+Math.pow((midH),2));
-        //Math.pow((midW)*111325,2) para pasar la latitud de grados a metros se multiplica coseno de la latitud por 111.111. Y eso se eleva al cuadrado
+        double midD=(minlat-maxlat);
+        double midW=(maxlon-minlon);
+        double midH=(maxalt-minalt);
+        //Diagonal de un cubo sqrt(x^2+y^2+z^2)
+        double diagonal=Math.sqrt(Math.pow(midD*111111,2)+Math.pow(midW*111111,2)+Math.pow(midH,2));
+        
         if (diagonal>100) {
             Octree octree=new Octree();
-            octree.octree(bees,mins,midD,midW,midH);//O(n)
+            octree.octree(bees,mins,midD/2,midW/2,midH/2);//O(n)
         } else {
             choque(); //O(n)
         }
