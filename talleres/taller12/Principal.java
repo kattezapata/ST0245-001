@@ -11,7 +11,7 @@ public class Principal
 
 
         Digraph lista=new Digraph(10);
-        //(pos origen, pos destino, nombre destino)
+        //(pos origen, pos destino)
         lista.addArc(0,1);
         lista.addArc(0,2);
         lista.addArc(3,4);
