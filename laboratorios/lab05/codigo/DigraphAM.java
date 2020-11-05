@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Esta clase es una implementación de un digrafo usando matrices de adyacencia
  * 
- * @author Mauricio Toro 
+ * @author Maria Alejandra Vélez Clavijo y Laura Katterine Zapata Rendon
  * @version 1
  */
 public class DigraphAM extends Graph

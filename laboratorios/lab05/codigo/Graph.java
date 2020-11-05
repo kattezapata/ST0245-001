@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Abstract class for implementations of Digraphs
  * 
- * @author Mauricio Toro
+ * @author Maria Alejandra Vélez Clavijo y Laura Katterine Zapata Rendon
  * @version 1
  */
 public abstract class Graph

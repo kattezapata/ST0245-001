@@ -10,7 +10,7 @@ import javafx.util.Pair;
  * Estructura de datos utilizada: Grafo con Matrices de Adyacencia
  * Complejidad: Peor Caso y Mejor Caso O(n*n)
  *
- * @author Mauricio Toro
+ * @author Maria Alejandra Vélez Clavijo y Laura Katterine Zapata Rendon
  * @version 1
  */
 public class VehiculosCompartidos
