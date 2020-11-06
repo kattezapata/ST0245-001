@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Esta clase es una implementación de un digrafo usando matrices de adyacencia
  * 
- * @author Maria Alejandra Vélez Clavijo y Laura Katterine Zapata Rendon
+ * @author Maria Alejandra Velez Clavijo y Laura Katterine Zapata Rendon
  * @version 1
  */
 public class DigraphAM extends Graph
@@ -27,6 +27,7 @@ return this.grafoAM;
     /**
      * Metodo que agrega un arco entre dos vertices
      */
+    @Override
     public void addArc(int source, int destination, int time)
     {
         grafoAM[source][destination] = time;
@@ -36,6 +37,7 @@ return this.grafoAM;
      * Metodo que retorna el un ArrayList con el numero de todos los vertices que tengan una conexion
      * con uno
      */
+    @Override
     public ArrayList<Integer> getSuccessors(int vertice)
     {
         ArrayList<Integer> sucesores = new ArrayList<Integer>();
@@ -50,6 +52,7 @@ return this.grafoAM;
     /**
      * Metodo que retorna el valor o peso de un arco entre dos vertices
      */
+    @Override
     public int getTime(int source, int destination)
     { return grafoAM[source][destination];
     }
