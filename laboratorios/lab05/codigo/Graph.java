@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 /**
- * Abstract class for implementations of Digraphs
+ *  Clase abstracta para la implementación del grafo
  * 
- * @author Maria Alejandra VÃ©lez Clavijo y Laura Katterine Zapata Rendon
+ * @author Maria Alejandra Velez Clavijo y Laura Katterine Zapata Rendon
  * @version 1
  */
 public abstract class Graph
 {
-   //TamaÃ±o del grafo
+   //Tamaño del grafo
    protected int size;
    /**
     * Constructor de Graph
