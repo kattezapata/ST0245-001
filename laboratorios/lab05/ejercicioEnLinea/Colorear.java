@@ -1,7 +1,7 @@
 
 /**
  * Esta clase permite saber si se puede o no colorear un grafo conexo, con dos colores distintos.
- * @author Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón
+ * @author Maria Alejandra Velez Clavijo, Laura Katterine Zapata Rendon
  * @version 1
  */
 import java.util.*; 

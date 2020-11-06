@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Main here.
+ * La clase Main tiene como objetivo hacer pruebas a la clase Colorear.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Maria Alejandra Velez Clavijo, Laura Katterine Zapata Rendon
+ * @version 1
  */
 public class Main
 {
