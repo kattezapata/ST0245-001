@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -36,13 +35,17 @@ public class Datos{
             while(input1.hasNextLine()){
                 line1=input1.nextLine();
                 cont++;
-            }
+            }// O(n) n cantidad de elementos del arreglo
             //System.out.println(cont);
-            this.array=new String[cont][78];
+            this.array=new String[cont][9];
             //Array principal
-            String [][] arr=new String[cont][78];
+            String [][] arr=new String[cont][9];
 
             while(input.hasNextLine()){
+                /*
+                for (int j = 1; j <= 1; j++){ // Descarta la primera linea
+                line= input.nextLine();
+                }*/
 
                 line=input.nextLine();
                 String [] vector =line.split(";");
@@ -50,11 +53,11 @@ public class Datos{
                 arr[i]=vector;
                 i++;
                 array=arr;
-            }
+            }// O(n) n cantidad de elementos del arreglo
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-    }
+    }// O(n) n cantidad de elementos del arreglo
 
     /**
      * El método getArray() permite obtener el arreglo de dos dimensiones creado en el método leer()
@@ -64,6 +67,16 @@ public class Datos{
     public String[][] getArray(){
         return this.array;
     }
+
+    public String[][] getArrayParametros(int limiteInferior, int limiteSuperior){
+        String[][] matriz= new String[limiteSuperior-limiteInferior][];
+        int cont=0;
+        for(int i= limiteInferior; i<limiteSuperior;i++){
+            matriz[cont]=this.array[i];
+            cont++;
+        }
+        return matriz;
+    }// O(n) n cantidad de elementos del arreglo
 
     /**
      * El método imprimir permite mostrar el arreglo de dos dimensiones
@@ -78,5 +91,5 @@ public class Datos{
             System.out.println();
         }
 
-    }
+    }// O(n*n) n cantidad de elementos del arreglo
 }
