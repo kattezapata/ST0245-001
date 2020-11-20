@@ -2,10 +2,10 @@ import java.util.HashSet;
 import java.util.*;
 import javafx.util.Pair;
 /**
- * La clase impurezaGini permite saber cuál es la mejor condición para dividir un conjunto de datos
- * teniendo en cuenta la menor impureza ponderada
+ * La clase impurezaGini permite saber cual es la mejor condición para dividir un conjunto de datos
+ * teniendo en cuenta la mayor ganancia de la informacion
  *
- * @author Maria Alejandra Velez Clavijo, Laura Katterine Zapata Rendón
+ * @author Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón
  * @version 1
  */
 public class impurezaGini
@@ -13,10 +13,11 @@ public class impurezaGini
 {   
 
     /**
-     * El método mejorCondicion permite obtener cual es la columna y valor que divide mejor los datos, es decir, 
-     * aquella condición con menor impureza ponderada de Gini 
-     * @param arr arreglo de dos dimensiones
-     * @return Pair<Integer, String> pareja cuya llave es la columna y su valor es el mejor valor
+     * El metodo mejorCondicion() permite obtener cual es la ganancia de informacion, la columna y el valor que divide mejor los datos, es decir, 
+     * aquella condición con mayor ganancia de informacion 
+     * 
+     * @param arr arreglo de String de dos dimensiones, del cual se hallara la mejor condicion que lo divide.
+     * @return Pair<Float, Pair<Integer, Integer>> pareja cuya llave es la mayor ganancia de información y su valor es una pareja cuya llave es la mejor condicion y el valor es la columna.
      * 
      */
 
@@ -52,8 +53,12 @@ public class impurezaGini
     }
 
     /**
+     * El metodo mejorCondicionAux() permite obtener cual es la mayor ganancia de informacion y el valor que divide mejor los datos, es decir, 
+     * aquella condición con mayor ganancia de informacion para la respectiva columna.
+     * 
+     * @param arr arreglo de String ordenado respecto a pos
      * @param pos columna de la matriz con la cual se hallará la mejor condicion
-     * @param String [][] arr: arreglo de String ordenado respecto a pos
+     * @return Pair<Float, Integer pareja cuya llave es la mayor ganancia de información y su valor es la mejor condicion
      */
 
     public static Pair<Float, Integer> mejorCondicionAux(String[][] arr, int pos) 
@@ -145,8 +150,9 @@ public class impurezaGini
     } 
 
     /**
-     * El método impurezaGini permite calcular la impureza Gini en un arreglo de dos dimensiones
-     * @param array arreglo de dos dimensiones a calcular la impureza
+     * El método impurezaGini permite calcular la impureza Gini de acuerdo a el numero de exitos y no exitos
+     * @param exito numero de estudiantes con exito  
+     * @param noExito numero de estudiantes con no exito  
      * @return float impureza de Gini
      */
     public static float impurezaGini(float exito, float  noExito){
@@ -167,8 +173,8 @@ public class impurezaGini
     }
 
     /**
-     * El método posiblesValores permite obtener los diferentes valores que pueden presentarse en una columna (variable)
-     * determinada del arreglo
+     * El método posiblesValores permite obtener los diferentes valores que 
+     * pueden presentarse en una columna (variable) determinada del arreglo
      * @param arr arreglo de dos dimensiones
      * @param pos posición de la variable a analizar
      * @return String[] diferentes posibles valores que toma la variable
@@ -187,7 +193,7 @@ public class impurezaGini
     }
 
     /**
-     * El método dividirDatos permite dividir un arreglo en dos nuevos arreglos de acuerdo a una condición dada
+     * El método dividirDatos permite dividir un arreglo de String en dos nuevos arreglos de acuerdo a una condición dada
      * @param array arreglo de dos dimensiones a dividir
      * @param pos posición de la condición
      * @param val condición

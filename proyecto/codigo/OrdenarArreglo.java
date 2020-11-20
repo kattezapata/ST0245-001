@@ -1,9 +1,8 @@
-//
 /**
  * La clase OrdenarArreglo implementa el algoritmo Merge sort para ordenar un arreglo de String en O(nlogn).
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Maria Alejandra Vélez Clavijo, Laura Katterine Zapata Rendón
+ * @version 1
  */
 public class OrdenarArreglo
 {
@@ -18,9 +17,9 @@ public class OrdenarArreglo
     }
 
     /**
-     * El método mergesort es un método que permite ordenar un arreglo de enteros, en este caso de menor a mayor
-     * @param Array[][] matriz a ordenar
-     * @param pos columna de la matriz a ordenar
+     * El metodo mergesort es un método que permite ordenar un arreglo de enteros, en este caso de menor a mayor
+     * @param Array arreglo a ordenar
+     * @return String[] arreglo ordenado de menor a mayor
      */
     public static String [] mergesort(String Array[]){
         if(Array.length==1 ||Array.length==0){
@@ -30,12 +29,12 @@ public class OrdenarArreglo
     } 
 
     /**
-     * En el método mergesort se hacen comparaciones entre los elementos del arreglo y 
+     * En el metodo mergesort se hacen comparaciones entre los elementos del arreglo y 
      * según sea el caso se pasa al llamado recursivo que permitirá el ordeamiento de los elementos
-     * @param Array[][]  matriz a ordenar
+     * @param Array arreglo a ordenar
      * @param izq Indicador de posiciones, en este caso posición izquierda
      * @param der Indicador de posiciones, en este caso posición izquierda
-     * @param pos columna de la matriz a ordenar
+     * @return String[] arreglo ordenado de menor a mayor
      */
     private static String[] mergesort(String Array[],int izq, int der){
         String [] arr=new String[Array.length];
@@ -51,14 +50,14 @@ public class OrdenarArreglo
     }
 
     /**
-     * El método merge es un método que permite ordenar un arreglo de enteros, en este caso de menor a mayor.
-     * Aquí se hacen comparaciones entre los elementos del arreglo y según sea el caso se intercambian las posiciones
+     * El metodo merge permite ordenar un arreglo de String, en este caso de menor a mayor.
+     * Aqui se hacen comparaciones entre los elementos del arreglo y según sea el caso se intercambian las posiciones
      * de estos, de esta manera se da dicho ordenamiento
-     * @param Array[][] matriz a ordenar
+     * @param Array arreglo a ordenar
      * @param izq Indicador de posiciones, en este caso posición izquierda
      * @param der Indicador de posiciones, en este caso posición izquierda 
      * @param mitad Indicador de posiciones, en este caso posición media del arreglo 
-     * @param pos columna de la matriz a ordenar
+     * @return String[] arreglo ordenado de menor a mayor
      */
     private static String [] merge(String Array[],int izq, int mitad, int der){
         int izq1, izq2, izqG;

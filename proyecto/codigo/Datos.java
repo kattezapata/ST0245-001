@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * La clase Datos permite leer un arcivo.csv y almacenar sus datos en un arreglo
+ * La clase Datos permite leer un arcivo.csv y almacenar sus datos en una matriz de String.
  *
  * @author Maria Alejandra Velez Clavijo, Laura Katterine Zapata Rendón
  * @version 1
  */
 
 public class Datos{
+
     private static String [][] array;
+
     /**
      * El método leer permite leer un archivo.csv y lo almacena en un arreglo de dos dimensiones
      * @param files Nombre del archivo a leer
@@ -58,9 +60,10 @@ public class Datos{
             System.out.println(e.getMessage());
         }
     }// O(n) n cantidad de elementos del arreglo
-
+    
     /**
      * El método getArray() permite obtener el arreglo de dos dimensiones creado en el método leer()
+     * 
      * @return String[][] arreglo de cadenas
      * 
      */
@@ -68,6 +71,14 @@ public class Datos{
         return this.array;
     }
 
+    /**
+     * El método getArrayParametros() permite obtener el arreglo de dos dimensiones creado a partir de dos limites
+     * @param limiteInferior limite menor desde donde comenzara a almacenarse la matriz
+     * @param limiteSuperior limite mayor hasta donde terminara de almacenarse la matriz
+     * 
+     * @return String[][] arreglo de cadenas
+     * 
+     */
     public String[][] getArrayParametros(int limiteInferior, int limiteSuperior){
         String[][] matriz= new String[limiteSuperior-limiteInferior][];
         int cont=0;
@@ -79,7 +90,8 @@ public class Datos{
     }// O(n) n cantidad de elementos del arreglo
 
     /**
-     * El método imprimir permite mostrar el arreglo de dos dimensiones
+     * El método imprimir permite mostrar por consola el arreglo de dos dimensiones
+     * 
      * @param array arreglo a imprimir
      */
     public void imprimir(String[][] array){
